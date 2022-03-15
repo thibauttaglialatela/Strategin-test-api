@@ -1,0 +1,22 @@
+{
+  "name": "test-stragin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.8",
+    "argon2": "^0.28.5",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.6",
+    "mongoose-unique-validator": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
