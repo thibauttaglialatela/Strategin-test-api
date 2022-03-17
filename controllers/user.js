@@ -44,3 +44,7 @@ exports.login = (req, res, next) => {
     })
     .catch((error) => res.status(500).json({ error }));
 };
+//TODO: écrire la fonction pour récupérer la liste des utilisateurs
+exports.findAllUsers = (req, res) => {
+
+}
