@@ -1,7 +1,7 @@
 **API sécurisée par Register/Login**
 ========================================
 
-Une fois le projet cloné faire un *npm install*
+Une fois le projet cloné faire un *npm install* puis de recréér le fichier .env avec ses informations de connection.
 
 Le but du test était de développer une application permettant de s'inscrire via des informations basiques.
 -----------------------------------------------------------------------------------------------------------
