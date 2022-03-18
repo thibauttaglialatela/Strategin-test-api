@@ -1,8 +1,9 @@
 const User = require("../models/user");
 let bcrypt = require("bcryptjs");
 let jwt = require("jsonwebtoken");
+const user = require("../models/user");
 
-exports.signup = async (req, res, next) => {
+exports.signup = async (req, res) => {
   try {
     var salt = await bcrypt.genSaltSync(10);
   } catch (error) {
@@ -21,7 +22,7 @@ exports.signup = async (req, res, next) => {
   }
 };
 
-exports.login = (req, res, next) => {
+exports.login = (req, res) => {
   User.findOne({ email: req.body.email })
     .then((user) => {
       if (!user) {
@@ -45,6 +46,17 @@ exports.login = (req, res, next) => {
     .catch((error) => res.status(500).json({ error }));
 };
 //TODO: écrire la fonction pour récupérer la liste des utilisateurs
-exports.findAllUsers = (req, res) => {
-
-}
+exports.findAllUsers = async (req, res) => {
+  try {
+    await user.find({}, async (err, result) => {
+      try {
+        res.status(200).json(result);
+      } catch {
+        console.log(err);
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(404).json({ message: "no user found" });
+  }
+};
